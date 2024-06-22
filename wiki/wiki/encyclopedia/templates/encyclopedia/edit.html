@@ -1,0 +1,15 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {{title}}
+{% endblock %}
+
+{% block body %}
+<form style="display:flex;flex-direction:column;" action ="{% url 'edit' title%}" method = "POST">
+    {% csrf_token %}
+    <input style="border:0.01px solid rgb(32, 33, 36);width:1000px;margin-top:20px;border-radius:10px;" type="text" placeholder="Enter the title" value={{title}} name="title">
+    <textarea style="border:0.01px solid rgb(32, 33, 36);width:1000px; height:500px; margin-top:30px;border-radius:10px; " name="content" placeholder="Enter Content">{{content}}</textarea>
+    <input style="border:hidden;background-color:rgb(29,127,255);color:white; width:100px; margin-top:40px;" type="submit">
+</form>
+
+{% endblock %}

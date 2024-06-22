@@ -1,0 +1,11 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {{title}}
+{% endblock %}
+
+{% block body %}
+    <div>{{content|safe}}<div>  
+    <div><a href="{%url 'edit' title %}"><button style="background-color:rgb(29,127,255); border:hidden; margin-top:30px; color:white;">EDIT</button></a></div>
+
+{% endblock %}

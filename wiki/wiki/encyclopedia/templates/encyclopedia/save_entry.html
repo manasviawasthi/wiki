@@ -1,0 +1,15 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Create a New Entry
+{% endblock %}
+
+{% block body %}
+    <form style="display:flex;flex-direction:column;" action ="{% url 'save' %}" method = "POST">
+        {% csrf_token %}
+        <input style="border:0.5px solid ;width:1000px;margin-top:20px;border-radius:10px;" type="text" placeholder="Enter the title" name="title">
+        <textarea style="width:1000px; height:500px; margin-top:30px;border-radius:10px; " name="content" placeholder="Enter Content"></textarea>
+        <input style="border:hidden;background-color:rgb(29,127,255);color:white; width:100px; margin-top:40px;" type="submit">
+    </form>
+
+{% endblock %}
